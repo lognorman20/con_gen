@@ -9,12 +9,9 @@ import string
 
 # Load raw corpus
 def load_corpus(filename):
-    # open the file as read only
-    file = open(filename, 'r')
-    # read all text
-    text = file.read()
-    # close the file
-    file.close()
+    file = open(filename, 'r') # open the file as read only
+    text = file.read() # read all text
+    file.close() # close the file
     return text
 
 # Parse & Clean Function Testing
