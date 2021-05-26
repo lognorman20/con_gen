@@ -23,7 +23,7 @@ def parse_and_clean(input):
     This functions cleans the corpus of special and unnecessary characters, thus
     allowing for the tokenization process to begin smoothly.
     '''
-    with open('../data/processed/corpus.txt', 'w') as fout:
+    with open('../data/interim/corpus.txt', 'w') as fout:
         text = load_corpus(input)
         text = re.sub(r'http\S+', '', text) # removes hyperlinks
         text = text.replace('_', "") # removes underscores
