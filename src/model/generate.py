@@ -5,8 +5,9 @@ from tensorflow.keras.utils import to_categorical
 from numpy.random import randint
 from pickle import load
 
-model = load_model('/Users/logno/Documents/GitHub/conspiracy_generation/models/model.h5')
-tokenizer = load(open('/Users/logno/Documents/GitHub/conspiracy_generation/models/tokenizer.pkl', 'rb'))
+model = load_model('/Users/logno/Documents/GitHub/conspiracy_generation/models/lstm_1.h5')
+tokenizer = load(open('/Users/logno/Documents/GitHub/conspiracy_generation/models/tokenizer_1.pkl', 'rb'))
+print('Model & Tokenizer Loaded')
 
 # generate a sequence from a language model
 def generate_seq(model, tokenizer, seq_length, seed_text, n_words):
