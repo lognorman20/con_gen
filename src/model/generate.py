@@ -31,3 +31,12 @@ def generate_seq(model, tokenizer, seq_length, seed_text, n_words):
 		in_text += ' ' + out_word
 		result.append(out_word)
 	return ' '.join(result)
+
+# select a seed text
+seed_text = 'Donald Trump is'
+seq_length = 50
+print(seed_text + '\n')
+ 
+# generate new text
+generated = generate_seq(model, tokenizer, seq_length, seed_text, 50)
+print(generated)
