@@ -1,3 +1,7 @@
+# 3. get_tokens - retrieves tokens from cleaned corpus
+# 4. organize_seqs - organize tokens into sequences
+# 5. save_doc - save tokens to file, one dialog per line
+
 def get_tokens(input):
     '''
     This function tokenizes each word in the cleaned corpus.
