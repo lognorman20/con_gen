@@ -19,6 +19,6 @@ for url in config.post_urls:
 
     submission.comments.replace_more(limit=None)
 
-    with open('/Users/logno/Documents/GitHub/conspiracy_generation/data/interim/corpus.txt', 'w') as fout:
+    with open('/Users/logno/Documents/GitHub/conspiracy_generation/data/raw/conspiracy_theories.txt', 'w') as fout:
         for comment in submission.comments.list():
             fout.write(comment.body.replace("\n", "") + '\n' * 2)
