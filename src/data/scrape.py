@@ -1,24 +1,24 @@
 import praw
 from praw.models import MoreComments
+import os, sys
+from os.path import dirname, join, abspath
+sys.path.insert(0, abspath(join(dirname(__file__), '..')))
 
-url = "https://www.reddit.com/r/conspiracy/comments/7t02zc/rconspiracy_round_table_9_bankers_oligarchs_one/"
-
+from data import config
 
 reddit = praw.Reddit(
-    user_agent="scaper:com.logno.conspiracyscaper:v0.0.1 (by /u/cashquatch01)",
-    client_id="FNA572O2Ec2ALw",
-    client_secret="a4c_VFDaYq8ZpPX-x4apONkChqrBpg",
-    username = 'cashquatch01',
-    password = 'Lokan15z'
+    user_agent = config.user_agent,
+    client_id= config.client_id,
+    client_secret= config.client_secret,
+    username = config.username,
+    password = config.password
     )
 
-submission = reddit.submission(url=url)
+for url in config.post_urls:
+    submission = reddit.submission(url=url)
 
-submission.comments.replace_more(limit=0)
+    submission.comments.replace_more(limit=None)
 
-post_comments = list()
-submission.comments.replace_more(limit=None)
-for comment in submission.comments.list():
-    post_comments.append(comment.body)
-
-print(post_comments[33])
+    with open('/Users/logno/Documents/GitHub/conspiracy_generation/data/interim/corpus.txt', 'w') as fout:
+        for comment in submission.comments.list():
+            fout.write(comment.body.replace("\n", "") + '\n' * 2)
