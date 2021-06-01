@@ -23,7 +23,7 @@ def parse_clean(filename):
                     encoded_string = line.encode("ascii", "ignore")
                     line = encoded_string.decode()
                     
-                    fout.write(line + '<|endoftext|>')
+                    fout.write(line)
         
     print("The corpus has been created at '/Users/logno/Documents/GitHub/conspiracy_generation/data/interim/corpus.txt'")
 
