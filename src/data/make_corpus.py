@@ -13,7 +13,7 @@ def parse_clean(filename):
     -> Remove non-ASCII characters
     '''
     with open(filename, 'r') as fin:
-        with open('/Users/logno/Documents/GitHub/conspiracy_generation/data/interim/corpus.txt', 'w') as fout:
+        with open('/Users/logno/Documents/GitHub/conspiracy_generation/data/processed/corpus.txt', 'w') as fout:
             for line in fin:
                 if len(line) >= 100:
                     line = line.replace('>', '') 
