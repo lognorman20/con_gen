@@ -1,16 +1,15 @@
-import gpt_2_simple as gpt2
+from aitextgen import aitextgen
 
-sess = gpt2.start_tf_sess()
-gpt2.load_gpt2(sess, run_name="run1", checkpoint_dir='/Users/logno/Documents/GitHub/conspiracy_generation/models/checkpoint/',
-model_dir='/Users/logno/Documents/GitHub/conspiracy_generation/models/', multi_gpu=False)
+# for mac users like me, comment the two lines below out if 
+import os
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
-text = gpt2.generate(sess,
-              length=50,
-              temperature=0.9,
-              top_p=0.9,
-              prefix="The moon landing is fake because",
-              nsamples=3,
-              truncate='<|endoftext|>'
-              )
+ai = aitextgen(model_folder="/Users/logno/Documents/GitHub/conspiracy_generation/models/trained_model", to_gpu=False)
+
+text = ai.generate(n=5,
+            prompt="The moon landing",
+            min_length=100,
+            temperature=1.0,
+            top_p=0.9)
 
 print(text)
