@@ -1,19 +1,26 @@
-import gpt_2_simple as gpt2
+import logging
+logging.basicConfig(
+        format="%(asctime)s — %(levelname)s — %(name)s — %(message)s",
+        datefmt="%m/%d/%Y %H:%M:%S",
+        level=logging.INFO
+    )
 
-# downloading model
-gpt2.download_gpt2(model_name="124M")
+from aitextgen import aitextgen
 
-file_name = "/Users/logno/Documents/GitHub/conspiracy_generation/data/interim/corpus.txt"
+ai = aitextgen(tf_gpt2="124M", to_gpu=True)
 
-# train model on corpus
-sess = gpt2.start_tf_sess()
+file_name = "/Users/logno/Documents/GitHub/conspiracy_generation/data/processed/corpus.txt"
 
-gpt2.finetune(sess,
-              dataset=file_name,
-              model_name='124M',
-              steps=200,
-              restore_from='fresh',
-              run_name='run1',
-              print_every=10,
-              sample_every=100,
-              )
+ai.train(file_name,
+         line_by_line=False,
+         from_cache=False,
+         num_steps=2,
+         generate_every=1000,
+         save_every=1000,
+         save_gdrive=False,
+         learning_rate=1e-3,
+         fp16=False,
+         batch_size=1, 
+         )
+
+ai.save()
