@@ -17,7 +17,9 @@ def parse_clean(filename):
             for line in fin:
                 if len(line) >= 100:
                     line = line.replace('>', '') 
-                    line = line.replace('  ', ' ') 
+                    line = line.replace('  ', ' ')
+                    line = line.replace('[', '') 
+                    line = line.replace(']', '')
                     line = re.sub(r'http\S+', '', line)
                     line = line.replace('*', '')
                     encoded_string = line.encode("ascii", "ignore")
