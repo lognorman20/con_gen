@@ -1,6 +1,6 @@
 from aitextgen import aitextgen
 
-# for mac users like me, comment the two lines below out if 
+# for mac users like me, comment the two lines below out if not mac
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
