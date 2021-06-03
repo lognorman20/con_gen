@@ -49,6 +49,7 @@ def st_stderr(dst):
     with st_redirect(sys.stderr, dst):
         yield
 
+@st.cache(suppress_st_warning=True)
 def generate(user_input) -> str:
     return ai.generate_one(max_length=200, prompt=user_input, min_length=100, temperature=1.0, top_p=0.9)
 
@@ -60,7 +61,7 @@ def main():
     input = form.text_input('Enter your conspiracy here')
     submit = form.form_submit_button('Generate')
 
-    st.write('Press generate to generate a conspiracy theory!')
+    st.markdown('Example inputs: "The moon landing is", "I am starting to believe", "The Earth is flat because"')
 
     hide_streamlit_style = """
             <style>
