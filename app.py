@@ -18,7 +18,12 @@ from aitextgen import aitextgen
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
-ai = aitextgen(model_folder="Users/logno/Documents/GitHub/conspiracy_generation/models/trained_model", to_gpu=False)
+@st.cache(allow_output_mutation=True)
+def load_model():
+    ai = aitextgen(model_folder="/trained_model", to_gpu=False)
+    return ai
+
+ai = load_model()
 
 @contextmanager
 def st_redirect(src, dst):
