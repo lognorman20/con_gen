@@ -14,7 +14,7 @@ file_name = "/Users/logno/Documents/GitHub/conspiracy_generation/data/processed/
 ai.train(file_name,
          line_by_line=False,
          from_cache=False,
-         num_steps=2,
+         num_steps=3000,
          generate_every=1000,
          save_every=1000,
          save_gdrive=False,
