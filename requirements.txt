@@ -5,7 +5,7 @@ altair==4.1.0
 appnope==0.1.2
 argon2-cffi==20.1.0
 astor==0.8.1
-astroid==2.5
+astroid>=2.5.2
 astunparse==1.6.3
 async-generator==1.10
 async-timeout==3.0.1
