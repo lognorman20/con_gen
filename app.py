@@ -20,7 +20,7 @@ os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    ai = aitextgen(model_folder="/app/trained_model", to_gpu=False)
+    ai = aitextgen(model_folder="trained_model", to_gpu=False)
     return ai
 
 ai = load_model()
