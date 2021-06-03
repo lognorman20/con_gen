@@ -7,6 +7,7 @@ logging.basicConfig(
 
 from aitextgen import aitextgen
 
+# defining the model 
 ai = aitextgen(tf_gpt2="124M", to_gpu=True)
 
 file_name = "/Users/logno/Documents/GitHub/conspiracy_generation/data/processed/corpus.txt"
@@ -14,7 +15,7 @@ file_name = "/Users/logno/Documents/GitHub/conspiracy_generation/data/processed/
 ai.train(file_name,
          line_by_line=False,
          from_cache=False,
-         num_steps=3000,
+         num_steps=6000,
          generate_every=1000,
          save_every=1000,
          save_gdrive=False,

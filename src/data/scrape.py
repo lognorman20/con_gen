@@ -6,6 +6,7 @@ sys.path.insert(0, abspath(join(dirname(__file__), '..')))
 
 from data import config
 
+# defining user
 reddit = praw.Reddit(
     user_agent = config.user_agent,
     client_id= config.client_id,
@@ -14,11 +15,12 @@ reddit = praw.Reddit(
     password = config.password
     )
 
+# data collection and writing to file
 with open('data/raw/conspiracy_theories.txt', 'w') as fout:
-    for url in config.post_urls:
+    for url in config.post_urls: # collecting data
         submission = reddit.submission(url=url)
         submission.comments.replace_more(limit=None)
-        for comment in submission.comments.list():
+        for comment in submission.comments.list(): # writing data to model
             fout.write(comment.body.replace("\n", "") + '\n' * 2)
 
 # Since this code takes a bit to run (about five minutes) , I am setting myself a notification to know when it is done
