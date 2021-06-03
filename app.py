@@ -6,6 +6,8 @@ from threading import current_thread
 
 import sys
 
+import random
+
 from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
@@ -49,7 +51,7 @@ def st_stderr(dst):
     with st_redirect(sys.stderr, dst):
         yield
 
-@st.cache(suppress_st_warning=True)
+@st.cache(suppress_st_warning=True, show_spinner=False)
 def generate(user_input) -> str:
     return ai.generate_one(max_length=200, prompt=user_input, min_length=100, temperature=1.0, top_p=0.9)
 
@@ -57,11 +59,12 @@ def main():
     st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
     st.write('\n'*2)
 
+    st.markdown('**Example inputs**: "_The moon landing is", "I am starting to believe", "The Earth is flat because"_')
+
     form = st.form(key='my-form')
     input = form.text_input('Enter your conspiracy here')
     submit = form.form_submit_button('Generate')
 
-    st.markdown('Example inputs: "_The moon landing is", "I am starting to believe", "The Earth is flat because"_')
 
     hide_streamlit_style = """
             <style>
@@ -73,8 +76,13 @@ def main():
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
     if submit:
-        with st_stdout("markdown"):
-            print(generate(input).replace('*',''))
+        waiting_texts = ['Asking randoms on Reddit...','Confirming with the Illuminati...','Consulting with the aliens...', 
+        'Looking in the tunnels of Denver International Airport...', 'Discussing with Barack Obama...',
+        'Getting approval from Jeffrey Epstein...', 'Double-checking with Kanye West...']
+        with st.spinner(waiting_texts[random.randint(0,6)]):
+            with st_stdout("markdown"):
+                print(generate(input).replace('*',''))
+
 
 def image(src_as_string, **style):
     return img(src=src_as_string, style=styles(**style))
