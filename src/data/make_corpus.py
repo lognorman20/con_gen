@@ -8,7 +8,7 @@ def parse_clean(filename):
     Cleaning tasks:
     -> Remove short comments (less than 170 characters)
     -> Remove comments with links
-    -> Remove comments using quote notation (">" or ">>" markdown symbols)
+    -> Remove comments with markdown symbols like > and *
     -> Remove double white space from each comment
     -> Remove non-ASCII characters
     '''
@@ -19,12 +19,12 @@ def parse_clean(filename):
                     line = line.replace('>', '') 
                     line = line.replace('  ', ' ') 
                     line = re.sub(r'http\S+', '', line)
-                    line = line.replace('>', '')
+                    line = line.replace('*', '')
                     encoded_string = line.encode("ascii", "ignore")
                     line = encoded_string.decode()
                     
                     fout.write(line + '<|endoftext|>')
         
-    print("The corpus has been created at '/Users/logno/Documents/GitHub/conspiracy_generation/data/interim/corpus.txt'")
+    print("The corpus has been created at '/Users/logno/Documents/GitHub/conspiracy_generation/data/processed/corpus.txt")
 
 parse_clean(filename)
