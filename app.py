@@ -61,7 +61,7 @@ def main():
     input = form.text_input('Enter your conspiracy here')
     submit = form.form_submit_button('Generate')
 
-    st.markdown('Example inputs: "The moon landing is", "I am starting to believe", "The Earth is flat because"')
+    st.markdown('Example inputs: "_The moon landing is", "I am starting to believe", "The Earth is flat because"_')
 
     hide_streamlit_style = """
             <style>
