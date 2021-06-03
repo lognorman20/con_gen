@@ -4,8 +4,13 @@ aitextgen==0.5.2
 altair==4.1.0
 appnope==0.1.2
 argon2-cffi==20.1.0
+<<<<<<< HEAD
 astor==0.8.1
 astroid==2.5
+=======
+astor @ file:///home/conda/feedstock_root/build_artifacts/astor_1593610464257/work
+astroid @ file:///opt/concourse/worker/volumes/live/9de2becb-270f-43cf-6533-a7867d89298c/volume/astroid_1613500844589/work
+>>>>>>> 876661be431de00afa0414d3a1dd09fbe15038be
 astunparse==1.6.3
 async-generator==1.10
 async-timeout==3.0.1
@@ -58,7 +63,11 @@ jupyterlab-widgets==1.0.0
 Keras-Applications==1.0.8
 keras-nightly==2.5.0.dev2021032900
 Keras-Preprocessing==1.1.2
+<<<<<<< HEAD
 lazy-object-proxy==1.6.0
+=======
+lazy-object-proxy @ file:///opt/concourse/worker/volumes/live/62c2169c-fe65-46ff-434a-480cde88c65b/volume/lazy-object-proxy_1616529070475/work
+>>>>>>> 876661be431de00afa0414d3a1dd09fbe15038be
 Markdown==3.3.4
 MarkupSafe==2.0.1
 matplotlib-inline==0.1.2
@@ -107,7 +116,10 @@ rsa==4.7.2
 sacremoses==0.0.45
 scipy==1.6.3
 Send2Trash==1.5.0
+<<<<<<< HEAD
 setuptools==57.0.0
+=======
+>>>>>>> 876661be431de00afa0414d3a1dd09fbe15038be
 six==1.15.0
 smmap==4.0.0
 streamlit==0.82.0
@@ -129,7 +141,11 @@ tornado==6.1
 tqdm==4.61.0
 traitlets==5.0.5
 transformers==4.6.1
+<<<<<<< HEAD
 typed-ast==1.4.2
+=======
+typed-ast @ file:///opt/concourse/worker/volumes/live/f24de662-b4e3-467b-58a8-199787662676/volume/typed-ast_1610484563580/work
+>>>>>>> 876661be431de00afa0414d3a1dd09fbe15038be
 typing-extensions==3.7.4.3
 tzlocal==2.1
 urllib3==1.26.5
@@ -137,7 +153,10 @@ validators==0.18.2
 wcwidth==0.2.5
 webencodings==0.5.1
 Werkzeug==2.0.1
+<<<<<<< HEAD
 wheel==0.36.2
+=======
+>>>>>>> 876661be431de00afa0414d3a1dd09fbe15038be
 widgetsnbextension==3.5.1
 wrapt==1.12.1
 yarl==1.6.3
