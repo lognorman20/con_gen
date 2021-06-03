@@ -5,7 +5,7 @@ altair==4.1.0
 appnope==0.1.2
 argon2-cffi==20.1.0
 astor==0.8.1
-astroid==2.5
+astroid==2.5.2
 async-generator==1.10
 async-timeout==3.0.1
 attrs==21.2.0
@@ -95,7 +95,6 @@ requests-oauthlib==1.3.0
 rsa==4.7.2
 sacremoses==0.0.45
 Send2Trash==1.5.0
-
 six==1.15.0
 smmap==4.0.0
 streamlit==0.82.0
