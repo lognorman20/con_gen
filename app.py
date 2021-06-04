@@ -79,7 +79,6 @@ with st.beta_expander("Conspiracy Topic Ideas"):
     for topic in topics:
         st.write(topic)
 
-@st.cache()
 def main():
 
     form = st.form(key='my-form')
