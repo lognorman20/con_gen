@@ -20,12 +20,12 @@ os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 hash_funcs={'_io.TextIOWrapper' : lambda _: None}
 
-@st.cache(hash_funcs=hash_funcs,allow_output_mutation=True, max_entries=1, ttl=None)
+@st.cache(allow_output_mutation=True, max_entries=1, ttl=None)
 def load_model():
     ai = aitextgen(model_folder="models/trained_model", to_gpu=False)
     return ai
 
-@st.cache(hash_funcs=hash_funcs, allow_output_mutation=True, max_entries=1, ttl=None)
+@st.cache(allow_output_mutation=True, max_entries=1, ttl=None)
 def load_topics():
     topics = ['Gnosticism, Archons & the Demiurge', 'Antarctica', 'The Moon, Phobos & Solar System Anomalies',
     'Nikola Tesla, Zero Point Energy, the Philadelphia Experiment & the Suppression of Advanced Technology', 'MKULTRA',
@@ -72,7 +72,7 @@ def st_stderr(dst):
 def generate(user_input) -> str:
     return ai.generate_one(max_length=200, prompt=user_input, min_length=100, temperature=1.0, top_p=0.9)
 
-@st.cache(hash_funcs=hash_funcs)
+@st.cache(hash_funcs=hash_funcs, suppress_st_warning=True)
 def main():
     st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
     st.write('\n'*2)
