@@ -18,7 +18,6 @@ from aitextgen import aitextgen
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
-@st.cache(allow_output_mutation=True)
 def load_model():
     ai = aitextgen(model_folder="models/trained_model", to_gpu=False)
     return ai
@@ -56,7 +55,6 @@ def st_stderr(dst):
     with st_redirect(sys.stderr, dst):
         yield
 
-@st.cache(suppress_st_warning=True, show_spinner=False)
 def generate(user_input) -> str:
     return ai.generate_one(max_length=200, prompt=user_input, min_length=100, temperature=1.0, top_p=0.9)
 
@@ -64,7 +62,7 @@ def main():
     st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
     st.write('\n'*2)
 
-    st.markdown('**Example inputs**: "_The moon landing is", "I am starting to believe", "The Earth is flat because"_')
+    st.markdown('<p style="text-align: center;">Example inputs: "I am starting to believe", "The moon landing is", "The theory about"</p>', unsafe_allow_html=True)
 
     form = st.form(key='my-form')
     input = form.text_input('Enter your conspiracy here')
