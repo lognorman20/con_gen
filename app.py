@@ -18,6 +18,7 @@ from aitextgen import aitextgen
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
+@st.cache(allow_output_mutations=True, max_entries=1, ttl=None)
 def load_model():
     ai = aitextgen(model_folder="models/trained_model", to_gpu=False)
     return ai
