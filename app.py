@@ -63,7 +63,7 @@ def main():
     st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
     st.write('\n'*2)
 
-    st.markdown('<p style="text-align: center;">Example inputs: "I am starting to believe aliens", "The moon landing never happened", "The theory about"</p>', unsafe_allow_html=True)
+    st.markdown('<p style="text-align: center;">Example inputs: "I am starting to believe aliens", "The moon landing never happened", "My theory about vaccines is"</p>', unsafe_allow_html=True)
 
     form = st.form(key='my-form')
     input = form.text_input('Enter your conspiracy here')
