@@ -72,14 +72,15 @@ def st_stderr(dst):
 def generate(user_input) -> str:
     return ai.generate_one(max_length=200, prompt=user_input, min_length=100, temperature=1.0, top_p=0.9)
 
-@st.cache()
-def main():
-    st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
     st.write('\n'*2)
 
-    with st.beta_expander("Conspiracy Topic Ideas"):
-        for topic in topics:
-            st.write(topic)
+with st.beta_expander("Conspiracy Topic Ideas"):
+    for topic in topics:
+        st.write(topic)
+
+@st.cache()
+def main():
 
     form = st.form(key='my-form')
     st.markdown('<p style="text-align: center;">Example inputs: "I am starting to believe aliens", "I think the moon landing", "My theory about vaccines is"</p>', unsafe_allow_html=True)
