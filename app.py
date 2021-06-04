@@ -63,9 +63,20 @@ def main():
     st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
     st.write('\n'*2)
 
-    st.markdown('<p style="text-align: center;">Example inputs: "I am starting to believe aliens", "I think the moon landing", "My theory about vaccines is"</p>', unsafe_allow_html=True)
+    
+
+    topics = ['Gnosticism, Archons & the Demiurge', 'Antarctica', 'The Moon, Phobos & Solar System Anomalies',
+    'Nikola Tesla, Zero Point Energy, the Philadelphia Experiment & the Suppression of Advanced Technology', 'MKULTRA',
+    'Medical Conspiracies', 'Nibiru, Enki/Enlil & Zecharia Sitchin', 'Mystery Schools, Secret Societies & Ancient America', 'Bankers, Oligarchs, One World Government, and the Attack on American Sovereignty',
+    'Unified Physics & the Mechanics of Consciousness: Religion, the Occult, Psychedelics, UFO Tech and the Holographic Universe', 'Aleister Crowley, Satanic Cults, and the Franklin Cover-up', 'Atlantis, Lemuria, Lost Civilizations & Ancient High Technology','Pizza/PedoGate and Human Sex Trafficking','Ghosts, Possessions, Psychic Phenomena & the Afterlife', 'The Intentional Addictiveness of Smart Devices and the Short & Long Term Effects of "Smart" Tech on Society'
+    'Solutions', 'The Cult of Science', 'The Past, Present & Future of /r/conspiracy', 'Human Potential', 'Cryptids', 'Usury, the Money Changers, and the Alchemy of High Finance', 'Big Pharma, Psychotropics & Mass Shootings', "Earth's Catastrophe Cycles", 'Tartaria, Cultural Layer/Mudflood & Phantom Time',
+    'Sacred Geometry, Cymatics, EMF Exposure, and the Effect of 5G on Biological Entities', 'Deep Underground Military Bases, Area 51, & CERN', 'Adrenochrome & Human Trafficking', 'The Cult of Saturn & the Black Cube', 'Media as Propaganda', 'Alien Presence on Earth']
+    with st.beta_expander("Conspiracy Topic Ideas"):
+        for topic in topics:
+            st.write(topic)
 
     form = st.form(key='my-form')
+    st.markdown('<p style="text-align: center;">Example inputs: "I am starting to believe aliens", "I think the moon landing", "My theory about vaccines is"</p>', unsafe_allow_html=True)
     input = form.text_input('Enter your conspiracy here')
     submit = form.form_submit_button('Generate')
 
