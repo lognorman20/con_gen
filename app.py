@@ -72,7 +72,7 @@ def st_stderr(dst):
 def generate(user_input) -> str:
     return ai.generate_one(max_length=200, prompt=user_input, min_length=100, temperature=1.0, top_p=0.9)
 
-@st.cache(hash_funcs=hash_funcs, suppress_st_warning=True)
+@st.cache(hash_funcs=hash_funcs)
 def main():
     st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
     st.write('\n'*2)
