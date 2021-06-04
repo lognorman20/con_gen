@@ -73,7 +73,7 @@ def generate(user_input) -> str:
     return ai.generate_one(max_length=200, prompt=user_input, min_length=100, temperature=1.0, top_p=0.9)
 
 st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
-    st.write('\n'*2)
+st.write('\n'*2)
 
 with st.beta_expander("Conspiracy Topic Ideas"):
     for topic in topics:
