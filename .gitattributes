@@ -1,0 +1,2 @@
+.bin filter=lfs diff=lfs merge=lfs -text
+/Users/logno/Documents/GitHub/conspiracy_generation/models/trained_model/pytorch_model.bin filter=lfs diff=lfs merge=lfs -text
