@@ -17,6 +17,6 @@ spec:
    spec:
      containers:
      - name: streamlit-app
-       image: gcr.io/[PROJECT_ID]/app
+       image: gcr.io/realcongen/app
        ports:
        - containerPort: 8501
