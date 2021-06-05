@@ -82,7 +82,7 @@ with st.beta_expander("Conspiracy Topic Ideas"):
 def main():
 
     form = st.form(key='my-form')
-    st.markdown('<p style="text-align: center;">Example inputs: "I am starting to believe aliens", "I think the moon landing", "My theory about vaccines is"</p>', unsafe_allow_html=True)
+    st.markdown('<p style="text-align: center;">Example inputs: "My conspiracy is that", "I am starting to believe aliens", "I think the moon landing", "My theory about vaccines is"</p>', unsafe_allow_html=True)
     input = form.text_input('Enter your conspiracy here')
     submit = form.form_submit_button('Generate')
 
