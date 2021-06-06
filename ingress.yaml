@@ -3,8 +3,8 @@ kind: Ingress
 metadata:
  name: streamlitweb
  annotations:
-   kubernetes.io/ingress.global-static-ip-name: streamlitweb-77b7889678-xs4db
-   networking.gke.io/managed-certificates: streamlit-certificate
+   kubernetes.io/ingress.global-static-ip-name: 34.117.62.232
+   networking.gke.io/managed-certificates: 'managedcertificate.networking.gke.io/streamlit-certificate'
  labels:
    app: streamlit
 spec:
