@@ -18,13 +18,14 @@ from aitextgen import aitextgen
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
+# defining function to hash text
 hash_funcs={'_io.TextIOWrapper' : lambda _: None}
-
+# loading in the model, caching it to save memory
 @st.cache(allow_output_mutation=True, max_entries=1, ttl=None)
 def load_model():
     ai = aitextgen(model_folder="models/trained_model", to_gpu=False)
     return ai
-
+# loading topics, caching to save memory
 @st.cache(allow_output_mutation=True, max_entries=1, ttl=None)
 def load_topics():
     topics = ['Gnosticism, Archons & the Demiurge', 'Antarctica', 'The Moon, Phobos & Solar System Anomalies',
@@ -37,7 +38,7 @@ def load_topics():
 
 ai = load_model()
 topics = load_topics()
-
+# making the generated text mutable
 @contextmanager
 def st_redirect(src, dst):
     placeholder = st.empty()
@@ -68,25 +69,24 @@ def st_stdout(dst):
 def st_stderr(dst):
     with st_redirect(sys.stderr, dst):
         yield
-
+# function to generate conspiracy theory
 def generate(user_input) -> str:
     return ai.generate_one(max_length=200, prompt=user_input, min_length=100, temperature=1.0, top_p=0.9)
-
+# site title
 st.markdown("<h1 style='text-align: center;'>Conspiracy Theory Generator</h1>", unsafe_allow_html=True)
 st.write('\n'*2)
-
+# conspiracy topic ideas drop down menu
 with st.beta_expander("Conspiracy Topic Ideas"):
     for topic in topics:
         st.write(topic)
-
+# app functions
 def main():
-
+    # form for user to input theory
     form = st.form(key='my-form')
     st.markdown('<p style="text-align: center;">Example inputs: "My conspiracy is that", "I am starting to believe aliens", "I think the moon landing", "My theory about vaccines is"</p>', unsafe_allow_html=True)
     input = form.text_input('Enter your conspiracy here')
     submit = form.form_submit_button('Generate')
-
-
+    # hiding streamlit menu and footer
     hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -95,7 +95,7 @@ def main():
             """
 
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
+    # button to generate predictions
     if submit:
         waiting_texts = ['Asking randoms on Reddit...','Confirming with the Illuminati...','Consulting with the aliens...', 
         'Looking in the tunnels of Denver International Airport...', 'Discussing with Barack Obama...',
@@ -104,7 +104,7 @@ def main():
             with st_stdout("markdown"):
                 print(generate(input).replace('*',''))
 
-
+# styling of footer
 def image(src_as_string, **style):
     return img(src=src_as_string, style=styles(**style))
 
@@ -112,7 +112,6 @@ def link(link, text, **style):
     return a(_href=link, _target="_blank", style=styles(**style))(text)
 
 def layout(*args):
-
     style = """
     <style>
 
@@ -171,7 +170,7 @@ def footer():
         br()
     ]
     layout(*myargs)
-
+# running the site
 if __name__=='__main__': 
     main()
     footer()
