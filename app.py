@@ -167,7 +167,10 @@ def footer():
               width=px(25),height=px(25)),
         " by ",
         link("https://www.linkedin.com/in/logannorman/", "Logan Norman"),
-        br()
+        br(),
+        link("https://github.com/lognorman20/conspiracy_generation", "Source Code"),
+        br(),
+        link("https://lognorman.medium.com/", "More Info")
     ]
     layout(*myargs)
 # running the site
