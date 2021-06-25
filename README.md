@@ -11,7 +11,7 @@ https://share.streamlit.io/lognorman20/conspiracy_generation/main/app.py
 
 **Check out my in-depth description on Medium here:** 
 
-https://lognorman.medium.com/how-to-find-new-songs-on-spotify-using-machine-learning-d99bd8855a18
+[coming soon]
 
 Recently, I've been reading  conspiracy theories about various topics from the Earth being flat to birds not existing. Some of the justifications behind these theories I found quite outlandish and thought that a conspiracy could be proved by any reason. This led me to try to generate reasonings behind conspiracy theories.
 
