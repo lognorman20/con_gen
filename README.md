@@ -28,7 +28,7 @@ This repository walks you through everything I did to build the algorithm:
 If you'd like to play with some code, clone this repo, create a blank Anaconda environment, and install the requirements file:
 ```bash
 # Clones this repo 
-git clone https://github.com/lognorman20/conspiracy_generation.git
+git clone https://github.com/lognorman20/con_gen.git
 # Move into this repos directory
 cd conspiracy_generation
 # Creates new environment called 'con_gen'
