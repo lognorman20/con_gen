@@ -168,7 +168,7 @@ def footer():
         " by ",
         link("https://www.linkedin.com/in/logannorman/", "Logan Norman"),
         br(),
-        link("https://github.com/lognorman20/conspiracy_generation", "Source Code"),
+        link("https://github.com/lognorman20/con_gen.git", "Source Code"),
         br(),
         link("https://lognorman.medium.com/", "More Info")
     ]
