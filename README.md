@@ -5,7 +5,7 @@ Project objective: Generate conspiracy theories with natural language processing
 
 Have fun with the application, it's hosted hosted here: 
 
-https://share.streamlit.io/lognorman20/conspiracy_generation/main/app.py
+https://share.streamlit.io/lognorman20/con_gen/main/app.py
 
 ## Overview
 
