@@ -11,7 +11,7 @@
   "gradient_checkpointing": false,
   "initializer_range": 0.02,
   "layer_norm_epsilon": 1e-05,
-  "line_by_line": false,
+  "line_by_line": true,
   "model_type": "gpt2",
   "n_ctx": 1024,
   "n_embd": 768,
@@ -27,7 +27,7 @@
   "summary_proj_to_labels": true,
   "summary_type": "cls_index",
   "summary_use_proj": true,
-  "transformers_version": "4.6.1",
+  "transformers_version": "4.8.2",
   "use_cache": true,
   "vocab_size": 50257
 }
