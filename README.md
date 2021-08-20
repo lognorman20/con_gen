@@ -11,7 +11,7 @@ https://share.streamlit.io/lognorman20/con_gen/main/app.py
 
 **Check out my in-depth description on Medium here:** 
 
-[coming soon]
+https://medium.com/codex/generating-conspiracy-theories-with-machine-learning-gpt-2-28e9c416b367
 
 Recently, I've been reading  conspiracy theories about various topics from the Earth being flat to birds not existing. Some of the justifications behind these theories I found quite outlandish and thought that a conspiracy could be proved by any reason. This led me to try to generate reasonings behind conspiracy theories.
 
